@@ -1,0 +1,12 @@
+<div class="container mt-3">
+  <div>
+    <h1 class="text-center"><%= @list.name %></h1>
+    <%= link_to '🗑️', list_path(@lit[:id]), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-outline-danger' %>
+    <%= @bookmarks.each do |bookmark| %>
+    <li><%= bookmark %></li>
+    <%= link_to '🗑️', bookmark_path(@bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-outline-danger' %>
+    <% end %>
+
+    </div>
+  </div>
+</div>
